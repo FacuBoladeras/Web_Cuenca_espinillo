@@ -37,8 +37,8 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
-        <script src="data/red_de_drenaje_4.js"></script>
-        <script src="data/Cuenca_espinillo_5.js"></script>
+        <script src="data/red_de_drenaje_5.js"></script>
+        <script src="data/Cuenca_espinillo_6.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -58,7 +58,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-32.06520355900246,-60.54682028251353],[-31.746790766251024,-59.897501196378165]]);
+        }).fitBounds([[-31.885207365975784,-60.37287098270163],[-31.8055244312764,-60.210677157406415]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -152,25 +152,34 @@
         });
         layer_GoogleSatellite_1;
         map.addLayer(layer_GoogleSatellite_1);
-        map.createPane('pane_Drenaje_2');
-        map.getPane('pane_Drenaje_2').style.zIndex = 402;
-        var img_Drenaje_2 = 'data/Drenaje_2.png';
-        var img_bounds_Drenaje_2 = [[-32.05444878283116,-60.42122499904948],[-31.74168249578718,-60.15442535966598]];
-        var layer_Drenaje_2 = new L.imageOverlay(img_Drenaje_2,
-                                              img_bounds_Drenaje_2,
-                                              {pane: 'pane_Drenaje_2'});
-        bounds_group.addLayer(layer_Drenaje_2);
-        map.addLayer(layer_Drenaje_2);
-        map.createPane('pane_DEM_cuenca_3');
-        map.getPane('pane_DEM_cuenca_3').style.zIndex = 403;
-        var img_DEM_cuenca_3 = 'data/DEM_cuenca_3.png';
-        var img_bounds_DEM_cuenca_3 = [[-32.055055096565304,-60.422741768524446],[-31.74107942545207,-60.1537250516494]];
-        var layer_DEM_cuenca_3 = new L.imageOverlay(img_DEM_cuenca_3,
-                                              img_bounds_DEM_cuenca_3,
-                                              {pane: 'pane_DEM_cuenca_3'});
-        bounds_group.addLayer(layer_DEM_cuenca_3);
-        map.addLayer(layer_DEM_cuenca_3);
-        function pop_red_de_drenaje_4(feature, layer) {
+        map.createPane('pane_Pendiente_2');
+        map.getPane('pane_Pendiente_2').style.zIndex = 402;
+        var img_Pendiente_2 = 'data/Pendiente_2.png';
+        var img_bounds_Pendiente_2 = [[-32.054728098065134,-60.42184083219468],[-31.74131484307602,-60.1537429139665]];
+        var layer_Pendiente_2 = new L.imageOverlay(img_Pendiente_2,
+                                              img_bounds_Pendiente_2,
+                                              {pane: 'pane_Pendiente_2'});
+        bounds_group.addLayer(layer_Pendiente_2);
+        map.addLayer(layer_Pendiente_2);
+        map.createPane('pane_Drenaje_3');
+        map.getPane('pane_Drenaje_3').style.zIndex = 403;
+        var img_Drenaje_3 = 'data/Drenaje_3.png';
+        var img_bounds_Drenaje_3 = [[-32.05444878283116,-60.42122499904948],[-31.74168249578718,-60.15442535966598]];
+        var layer_Drenaje_3 = new L.imageOverlay(img_Drenaje_3,
+                                              img_bounds_Drenaje_3,
+                                              {pane: 'pane_Drenaje_3'});
+        bounds_group.addLayer(layer_Drenaje_3);
+        map.addLayer(layer_Drenaje_3);
+        map.createPane('pane_DEM_cuenca_4');
+        map.getPane('pane_DEM_cuenca_4').style.zIndex = 404;
+        var img_DEM_cuenca_4 = 'data/DEM_cuenca_4.png';
+        var img_bounds_DEM_cuenca_4 = [[-32.055055096565304,-60.422741768524446],[-31.74107942545207,-60.1537250516494]];
+        var layer_DEM_cuenca_4 = new L.imageOverlay(img_DEM_cuenca_4,
+                                              img_bounds_DEM_cuenca_4,
+                                              {pane: 'pane_DEM_cuenca_4'});
+        bounds_group.addLayer(layer_DEM_cuenca_4);
+        map.addLayer(layer_DEM_cuenca_4);
+        function pop_red_de_drenaje_5(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -206,10 +215,10 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_red_de_drenaje_4_0(feature) {
+        function style_red_de_drenaje_5_0(feature) {
             if (feature.properties['Order'] >= 10.000000 && feature.properties['Order'] <= 13.000000 ) {
                 return {
-                pane: 'pane_red_de_drenaje_4',
+                pane: 'pane_red_de_drenaje_5',
                 opacity: 1,
                 color: 'rgba(6,18,225,1.0)',
                 dashArray: '',
@@ -222,7 +231,7 @@
             }
             if (feature.properties['Order'] >= 13.000000 && feature.properties['Order'] <= 19.000000 ) {
                 return {
-                pane: 'pane_red_de_drenaje_4',
+                pane: 'pane_red_de_drenaje_5',
                 opacity: 1,
                 color: 'rgba(6,18,225,1.0)',
                 dashArray: '',
@@ -235,7 +244,7 @@
             }
             if (feature.properties['Order'] >= 19.000000 && feature.properties['Order'] <= 32.000000 ) {
                 return {
-                pane: 'pane_red_de_drenaje_4',
+                pane: 'pane_red_de_drenaje_5',
                 opacity: 1,
                 color: 'rgba(6,18,225,1.0)',
                 dashArray: '',
@@ -248,7 +257,7 @@
             }
             if (feature.properties['Order'] >= 32.000000 && feature.properties['Order'] <= 69.000000 ) {
                 return {
-                pane: 'pane_red_de_drenaje_4',
+                pane: 'pane_red_de_drenaje_5',
                 opacity: 1,
                 color: 'rgba(6,18,225,1.0)',
                 dashArray: '',
@@ -261,7 +270,7 @@
             }
             if (feature.properties['Order'] >= 69.000000 && feature.properties['Order'] <= 258.000000 ) {
                 return {
-                pane: 'pane_red_de_drenaje_4',
+                pane: 'pane_red_de_drenaje_5',
                 opacity: 1,
                 color: 'rgba(6,18,225,1.0)',
                 dashArray: '',
@@ -274,7 +283,7 @@
             }
             if (feature.properties['Order'] >= 258.000000 && feature.properties['Order'] <= 85391.000000 ) {
                 return {
-                pane: 'pane_red_de_drenaje_4',
+                pane: 'pane_red_de_drenaje_5',
                 opacity: 1,
                 color: 'rgba(6,18,225,1.0)',
                 dashArray: '',
@@ -286,21 +295,21 @@
             }
             }
         }
-        map.createPane('pane_red_de_drenaje_4');
-        map.getPane('pane_red_de_drenaje_4').style.zIndex = 404;
-        map.getPane('pane_red_de_drenaje_4').style['mix-blend-mode'] = 'normal';
-        var layer_red_de_drenaje_4 = new L.geoJson(json_red_de_drenaje_4, {
+        map.createPane('pane_red_de_drenaje_5');
+        map.getPane('pane_red_de_drenaje_5').style.zIndex = 405;
+        map.getPane('pane_red_de_drenaje_5').style['mix-blend-mode'] = 'normal';
+        var layer_red_de_drenaje_5 = new L.geoJson(json_red_de_drenaje_5, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_red_de_drenaje_4',
-            layerName: 'layer_red_de_drenaje_4',
-            pane: 'pane_red_de_drenaje_4',
-            onEachFeature: pop_red_de_drenaje_4,
-            style: style_red_de_drenaje_4_0,
+            dataVar: 'json_red_de_drenaje_5',
+            layerName: 'layer_red_de_drenaje_5',
+            pane: 'pane_red_de_drenaje_5',
+            onEachFeature: pop_red_de_drenaje_5,
+            style: style_red_de_drenaje_5_0,
         });
-        bounds_group.addLayer(layer_red_de_drenaje_4);
-        map.addLayer(layer_red_de_drenaje_4);
-        function pop_Cuenca_espinillo_5(feature, layer) {
+        bounds_group.addLayer(layer_red_de_drenaje_5);
+        map.addLayer(layer_red_de_drenaje_5);
+        function pop_Cuenca_espinillo_6(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (var i in e.target._eventParents) {
@@ -1212,9 +1221,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Cuenca_espinillo_5_0() {
+        function style_Cuenca_espinillo_6_0() {
             return {
-                pane: 'pane_Cuenca_espinillo_5',
+                pane: 'pane_Cuenca_espinillo_6',
                 opacity: 1,
                 color: 'rgba(251,255,3,1.0)',
                 dashArray: '',
@@ -1225,25 +1234,26 @@
                 interactive: false,
             }
         }
-        map.createPane('pane_Cuenca_espinillo_5');
-        map.getPane('pane_Cuenca_espinillo_5').style.zIndex = 405;
-        map.getPane('pane_Cuenca_espinillo_5').style['mix-blend-mode'] = 'normal';
-        var layer_Cuenca_espinillo_5 = new L.geoJson(json_Cuenca_espinillo_5, {
+        map.createPane('pane_Cuenca_espinillo_6');
+        map.getPane('pane_Cuenca_espinillo_6').style.zIndex = 406;
+        map.getPane('pane_Cuenca_espinillo_6').style['mix-blend-mode'] = 'normal';
+        var layer_Cuenca_espinillo_6 = new L.geoJson(json_Cuenca_espinillo_6, {
             attribution: '',
             interactive: false,
-            dataVar: 'json_Cuenca_espinillo_5',
-            layerName: 'layer_Cuenca_espinillo_5',
-            pane: 'pane_Cuenca_espinillo_5',
-            onEachFeature: pop_Cuenca_espinillo_5,
-            style: style_Cuenca_espinillo_5_0,
+            dataVar: 'json_Cuenca_espinillo_6',
+            layerName: 'layer_Cuenca_espinillo_6',
+            pane: 'pane_Cuenca_espinillo_6',
+            onEachFeature: pop_Cuenca_espinillo_6,
+            style: style_Cuenca_espinillo_6_0,
         });
-        bounds_group.addLayer(layer_Cuenca_espinillo_5);
-        map.addLayer(layer_Cuenca_espinillo_5);
+        bounds_group.addLayer(layer_Cuenca_espinillo_6);
+        map.addLayer(layer_Cuenca_espinillo_6);
         var overlaysTree = [
-            {label: '<img src="legend/Cuenca_espinillo_5.png" /> Cuenca_espinillo', layer: layer_Cuenca_espinillo_5},
-            {label: 'red_de_drenaje <br /><table><tr><td style="text-align: center;"><img src="legend/red_de_drenaje_4_10130.png" /></td><td>10 - 13</td></tr><tr><td style="text-align: center;"><img src="legend/red_de_drenaje_4_13191.png" /></td><td>13 - 19</td></tr><tr><td style="text-align: center;"><img src="legend/red_de_drenaje_4_19322.png" /></td><td>19 - 32</td></tr><tr><td style="text-align: center;"><img src="legend/red_de_drenaje_4_32693.png" /></td><td>32 - 69</td></tr><tr><td style="text-align: center;"><img src="legend/red_de_drenaje_4_692584.png" /></td><td>69 - 258</td></tr><tr><td style="text-align: center;"><img src="legend/red_de_drenaje_4_258853915.png" /></td><td>258 - 85391</td></tr></table>', layer: layer_red_de_drenaje_4},
-            {label: "DEM_cuenca", layer: layer_DEM_cuenca_3},
-            {label: "Drenaje", layer: layer_Drenaje_2},
+            {label: '<img src="legend/Cuenca_espinillo_6.png" /> Cuenca_espinillo', layer: layer_Cuenca_espinillo_6},
+            {label: 'red_de_drenaje <br /><table><tr><td style="text-align: center;"><img src="legend/red_de_drenaje_5_10130.png" /></td><td>10 - 13</td></tr><tr><td style="text-align: center;"><img src="legend/red_de_drenaje_5_13191.png" /></td><td>13 - 19</td></tr><tr><td style="text-align: center;"><img src="legend/red_de_drenaje_5_19322.png" /></td><td>19 - 32</td></tr><tr><td style="text-align: center;"><img src="legend/red_de_drenaje_5_32693.png" /></td><td>32 - 69</td></tr><tr><td style="text-align: center;"><img src="legend/red_de_drenaje_5_692584.png" /></td><td>69 - 258</td></tr><tr><td style="text-align: center;"><img src="legend/red_de_drenaje_5_258853915.png" /></td><td>258 - 85391</td></tr></table>', layer: layer_red_de_drenaje_5},
+            {label: "DEM_cuenca", layer: layer_DEM_cuenca_4},
+            {label: "Drenaje", layer: layer_Drenaje_3},
+            {label: "Pendiente", layer: layer_Pendiente_2},
             {label: "Google Satellite", layer: layer_GoogleSatellite_1},
             {label: "Google Maps", layer: layer_GoogleMaps_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
